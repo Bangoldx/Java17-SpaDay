@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body>
+<form action="/user" method="POST">
+    <label>Username: <input type="text" name="username" th:value="${username}" required/></label>
+    <label>Email: <input type="email" name="email" th:value="${email}" required/></label>
+    <label>Password: <input type="password" name="password" required/></label>
+    <label>Retype Password: <input type="password" name="verify" required/></label>
+    <p th:if="${error}" th:text="${error}"></p>
+    <input type="submit" value="Create Account">
+</form>
+</body>
+</html>
